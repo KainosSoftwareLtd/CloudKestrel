@@ -1,0 +1,77 @@
+{
+  "Targets": [
+    {
+      "Target One": {
+        "Credentials": {
+          "AwsAccessKeyId": "TARGET1_AWS_ACCESS_KEY_ID",
+          "AwsSecretAccessKey": "TARGET1_AWS_SECRET_ACCESS_KEY"
+        },
+        "Rules": [
+          {
+            "Policy": {
+              "Name": "User_Source_IP_Restrictions",
+              "Source_IPs": [
+                "195.89.85.67"
+              ]
+            }
+          },
+          {
+            "Policy": {
+              "Name": "Force_MFA",
+              "IgnoreUsers": ["SecurityReader"]
+            }
+          },
+          {
+            "Config": {
+              "Name": "IAM_ROOT_ACCESS_KEY_CHECK",
+              "AddIfMissing": true
+            }
+          },
+          {
+            "Config": {
+              "Name": "IAM_USER_MFA_ENABLED",
+              "AddIfMissing": true,
+              "IgnoreUsers": ["SecurityReader"]
+            }
+          },
+          {
+            "Config": {
+              "Name": "IAM_USER_UNUSED_CREDENTIALS_CHECK",
+              "AddIfMissing": true
+            }
+          },
+          {
+            "Config": {
+              "Name": "S3_BUCKET_PUBLIC_READ_PROHIBITED",
+              "AddIfMissing": true
+            }
+          },
+          {
+            "Config": {
+              "Name": "S3_BUCKET_PUBLIC_WRITE_PROHIBITED",
+              "AddIfMissing": true
+            }
+          },
+          {
+            "Config": {
+              "Name": "IAM_USER_NO_POLICIES_CHECK",
+              "AddIfMissing": true
+            }
+          },
+          {
+            "Config": {
+              "Name": "IAM_POLICY_NO_STATEMENTS_WITH_ADMIN_ACCESS",
+              "AddIfMissing": true
+            }
+          },
+          {
+            "Config": {
+              "Name": "IAM_USER_GROUP_MEMBERSHIP_CHECK",
+              "AddIfMissing": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
