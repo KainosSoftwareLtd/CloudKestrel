@@ -74,3 +74,4 @@ class TestPolicyHelper(unittest.TestCase):
         # Call and test
         has_policy = PolicyHelper(iam).user_has_policy('', 'User_Source_IP_Restrictions')
         self.assertEqual(has_policy, True)
+
