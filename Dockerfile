@@ -12,10 +12,6 @@ RUN apt-get update && \
 RUN pip3 install --upgrade pip
 RUN pip3 install boto3
 
-# Allow Python modules to be imported
-ENV PYTHONPATH "${PYTHONPATH}:/working/attackfiles"
-
-
 COPY . /usr/local/bin/cloudkestrel
 RUN chmod +x /usr/local/bin/cloudkestrel/cloudkestrel.py
 ENTRYPOINT [ "/usr/local/bin/cloudkestrel/cloudkestrel.py" ]
