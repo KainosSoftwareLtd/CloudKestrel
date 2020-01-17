@@ -255,3 +255,18 @@ pip3 install boto3
 export TARGET1_AWS_SECRET_ACCESS_KEY=XXXX...  
 export TARGET1_AWS_ACCESS_KEY_ID=XXXX...  
 python3 cloudkestrel.py
+
+## Run as Docker
+
+Create a Docker environment file 
+```json
+TARGET1_AWS_SECRET_ACCESS_KEY=XXXX...
+TARGET1_AWS_ACCESS_KEY_ID=XXXX...
+HOST_DIR=/host_dir
+AWS_DEFAULT_REGION=eu-west-2
+```
+
+Build and run Docker
+```bash
+./build_run_docker.sh
+```

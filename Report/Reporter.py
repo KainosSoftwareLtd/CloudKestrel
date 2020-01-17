@@ -61,7 +61,7 @@ class Reporter:
         return Template(template_data)
 
     def report(self):
-        print(json.dumps(self.data))
+        # print(json.dumps(self.data))
 
         target_name = self.data['TargetResult']['Target']
         date = datetime.date.today()
@@ -75,7 +75,12 @@ class Reporter:
         template = self.get_template('template.html')
         output = (template.substitute(target=target_name, date=date_string, policies=policies_html, configs=configs_html))
 
-        f = open(target_name + '.html', "w+")
+        # Docker host_dir env variable, if we are not in Docker just write it to the cd
+        host_dir = os.getenv('HOST_DIR', '')
+        if host_dir:
+            host_dir = host_dir + os.sep
+
+        f = open(host_dir + target_name + '.html', "w+")
         f.write(output)
 
     def get_all_results(self):

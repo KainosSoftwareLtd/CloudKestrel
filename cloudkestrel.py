@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import json
 import logging
 import os
@@ -129,7 +131,7 @@ def load_targets():
     :return: All the results in the form of a list.
     """
     target_results = []
-    f = open(os.getcwd() + os.sep + 'targets.json')
+    f = open(os.path.join(os.path.dirname(__file__), 'targets.json'))
     target_data = f.read()
     target_json = json.loads(target_data)
     targets = target_json['Targets']
