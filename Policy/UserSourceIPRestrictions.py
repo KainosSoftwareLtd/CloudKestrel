@@ -49,10 +49,10 @@ class UserSourceIPRestrictions(PolicyHelper):
             """
             Parse the policy statement properties
             """
-            effect = data[EFFECT]
-            action = data[ACTION]
-            resource = data[RESOURCE]
-            sourceIPs = data['Condition']['NotIpAddress']['aws:SourceIp']
+            effect = data[0][EFFECT]
+            action = data[0][ACTION]
+            resource = data[0][RESOURCE]
+            sourceIPs = data[0]['Condition']['NotIpAddress']['aws:SourceIp']
 
             return {EFFECT: effect, ACTION: action, RESOURCE: resource, SOURCEIPS: sourceIPs}
 

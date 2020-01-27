@@ -1,4 +1,4 @@
-import datetime
+import time
 import json
 import os
 from string import Template
@@ -64,8 +64,7 @@ class Reporter:
         # print(json.dumps(self.data))
 
         target_name = self.data['TargetResult']['Target']
-        date = datetime.date.today()
-        date_string = date.strftime("%b %d %Y %H:%M:%S")
+        date_string = time.strftime("%b %d %Y %H:%M:%S")
 
         policies, configs = self.construct_rule_results()
 

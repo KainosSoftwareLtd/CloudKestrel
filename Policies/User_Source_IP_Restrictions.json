@@ -1,6 +1,6 @@
 {
   "Version": "2012-10-17",
-  "Statement": {
+  "Statement": [{
     "Effect": "Deny",
     "Action": "*",
     "Resource": "*",
@@ -9,5 +9,5 @@
         "aws:SourceIp": "PARAM_1_SOURCE_IP"
       }
     }
-  }
+  }]
 }

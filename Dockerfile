@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER kainos
 
-# Install Ruby and other OS stuff
+# Install Python and other OS stuff
 RUN apt-get update && \
     apt-get install -y build-essential \
       python3.5 \
